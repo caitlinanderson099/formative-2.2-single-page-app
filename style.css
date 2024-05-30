@@ -1,3 +1,4 @@
+/* -------- NAVBAR -------------- */
 nav {
     position: fixed;
     top: 0;
@@ -52,6 +53,7 @@ nav {
     ;
 }
 
+/* ---------- LAYOUT AND SIZE FOR ALL SECTIONS --------- */
 
 .section {
     display: flex;
@@ -61,12 +63,17 @@ nav {
     color: white;
 }
 
-/* this is selecting the first div of section */
-.section:nth-child(1) {
-    background-color: #101110;
+#shopAllSection {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    h2 {
+        padding-top: 55px;
+    }
 }
 
-/* LANDING PAGE */
+/* ------------ LANDING PAGE -------------- */
 
 /* To ensure items are in a row across the section */
 .row {
@@ -161,27 +168,44 @@ nav {
 
 
 
+/* -------- SHOP ALL SECTION ----------- */
+/* #shopAllSection {
+    padding-top: 55px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+} */
 
 
 
+/* COLOURING FOR SECTIONS, CHANGE AND POSSIBLY DELETE LATER ON */
 
-
-/* this is selecting the second div of section */
+/* this is selecting the first div of section */
 .section:nth-child(1) {
-    background-color: #3498db;
+    background-color: #101110;
 }
 
-/* this is selecting the third div of section */
+/* this is selecting the second div of section */
 .section:nth-child(2) {
     background-color: #e74c3c;
 }
 
-/* this is selecting the fourth div of section */
+/* this is selecting the third div of section */
 .section:nth-child(3) {
     background-color: #9b59b6;
 }
 
-/* this is selecting the fifth div of section */
+/* this is selecting the fourth div of section */
 .section:nth-child(4) {
+    background-color: #96183c;
+}
+
+/* this is selecting the fifth div of section */
+.section:nth-child(5) {
+    background-color: #352649;
+}
+
+/* this is selecting the sixth div of section */
+.section:nth-child(6) {
     background-color: #96183c;
 }
