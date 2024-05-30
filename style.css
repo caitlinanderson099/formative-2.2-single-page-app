@@ -1,0 +1,187 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 30px;
+    background-color: white;
+    z-index: 100;
+    min-width: 100%;
+
+    .nav-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #101110;
+            transition: all 0.3s ease;
+        }
+
+        ;
+
+        a:hover {
+            color: #eeba2b;
+            transition: all 0.3s ease;
+        }
+
+        ;
+
+        .logo {
+            background-image: url(/img/jewellery-logo.webp);
+            background-size: cover;
+            background-position: center;
+            min-width: 100px;
+            min-height: 100px;
+        }
+
+        ;
+
+        .fa-cart-shopping {
+            color: black;
+            font-size: 2rem;
+        }
+
+        ;
+    }
+
+    ;
+}
+
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    color: white;
+}
+
+/* this is selecting the first div of section */
+.section:nth-child(1) {
+    background-color: #101110;
+}
+
+/* LANDING PAGE */
+
+/* To ensure items are in a row across the section */
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+/* This creates the two columns in the section */
+.col {
+    flex: 1;
+}
+
+/* Left Half of Landing Page */
+.left-half {
+    display: flex;
+    flex-direction: column;
+     justify-content: center; 
+     padding-left: 30px;
+     padding-top: 30px;
+
+    .title {
+        font-size: 2em;
+        justify-content: center;
+
+        /* This allows for the buttons to be close underneath the title text */
+        h4 {
+            margin: 0px;
+            padding: 0px;
+        }
+    }
+
+    .buttons {
+
+        button {
+            padding: 15px;
+            border-radius: 9px;
+            border: 2px solid #101110;
+            background-color: white;
+            color: #101110;
+            font-size: 17px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bolder;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #101110;
+            color: #eeba2b;
+            border: 2px solid #eeba2b;
+            transition: all 0.3s ease;
+        }
+    }
+
+
+}
+
+
+
+
+
+/* Right Half of Landing Page */
+.right-half {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+    /* Image Sizing */
+    img {
+        max-width: 300px;
+        max-height: 300px;
+        border-radius: 40%;
+    };
+
+    /* Image  1 Positioning */
+    .landing-img1 {
+        position: absolute;
+        right: 25%;
+        top: 50%;
+    };
+
+    /* Image 2  Positioning */
+    .landing-img2 {
+        position: absolute;
+        right: 10%;
+    };
+
+};
+
+
+
+
+
+
+
+
+
+
+/* this is selecting the second div of section */
+.section:nth-child(1) {
+    background-color: #3498db;
+}
+
+/* this is selecting the third div of section */
+.section:nth-child(2) {
+    background-color: #e74c3c;
+}
+
+/* this is selecting the fourth div of section */
+.section:nth-child(3) {
+    background-color: #9b59b6;
+}
+
+/* this is selecting the fifth div of section */
+.section:nth-child(4) {
+    background-color: #96183c;
+}
