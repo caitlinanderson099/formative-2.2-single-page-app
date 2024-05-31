@@ -1,3 +1,5 @@
+/* --------- Google Font Import ------------- */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 /* -------- NAVBAR -------------- */
 nav {
     position: fixed;
@@ -23,14 +25,10 @@ nav {
             transition: all 0.3s ease;
         }
 
-        ;
-
         a:hover {
             color: #eeba2b;
             transition: all 0.3s ease;
         }
-
-        ;
 
         .logo {
             background-image: url(/img/jewellery-logo.webp);
@@ -40,18 +38,48 @@ nav {
             min-height: 100px;
         }
 
-        ;
-
-        .fa-cart-shopping {
+        .fa-user {
             color: black;
             font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        ;
+        .fa-user:hover {
+            color: #eeba2b;
+            transition: all 0.3s ease;
+        }
     }
-
-    ;
 }
+
+/* -------------- Shopping Cart Icon -------------- */
+
+.fixed-cart {
+    position: fixed;
+    top: 90%;
+    left: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #101110;
+    font-size: 2em;
+    background-color: white;
+    color: #101110;
+    padding: 10px;
+    z-index: 100;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fixed-cart:hover {
+    border: 2px solid #eeba2b;
+    background-color: #101110;
+    color: #eeba2b;
+    transition: all 0.3s ease;
+}
+
+
 
 /* ---------- LAYOUT AND SIZE FOR ALL SECTIONS --------- */
 
@@ -61,16 +89,6 @@ nav {
     justify-content: center;
     font-size: 3em;
     color: white;
-}
-
-#shopAllSection {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
-    h2 {
-        padding-top: 55px;
-    }
 }
 
 /* ------------ LANDING PAGE -------------- */
@@ -86,16 +104,23 @@ nav {
     flex: 1;
 }
 
+#landingPage {
+    background-color: #101110;
+    font-family: "Great Vibes", cursive;
+    padding-bottom: 10px;
+}
+
 /* Left Half of Landing Page */
 .left-half {
     display: flex;
     flex-direction: column;
      justify-content: center; 
      padding-left: 30px;
-     padding-top: 30px;
+     padding-top: 70px;
 
     .title {
-        font-size: 2em;
+        padding-top: 60px;
+        font-size: 2.3em;
         justify-content: center;
 
         /* This allows for the buttons to be close underneath the title text */
@@ -131,10 +156,6 @@ nav {
 
 }
 
-
-
-
-
 /* Right Half of Landing Page */
 .right-half {
     display: flex;
@@ -147,6 +168,7 @@ nav {
         max-width: 300px;
         max-height: 300px;
         border-radius: 40%;
+        border: 5px double #eeba2b;
     };
 
     /* Image  1 Positioning */
@@ -163,6 +185,18 @@ nav {
     };
 
 };
+
+
+
+/* ------------- SIGN UP FORM PAGE ----------- */
+
+
+
+
+
+
+
+
 
 
 
