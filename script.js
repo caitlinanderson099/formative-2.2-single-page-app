@@ -298,7 +298,56 @@ const jewelleryCards = [
     }
 ] // END OF DATA ARRAY
 
+// Set up a variable to track the user:
+let user;
 
+// Click on the SubmitButton
+$('#submitButton').click(function(event) {
+    event.preventDefault();
+    console.log('working');
+
+    // Setup Regex for form validation:
+    const usernameRegex = /^[a-zA-Z0-9_]{3,15}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    // Get input values:
+    const username = $('#username').val();
+    const email = $('#email').val();
+    const password = $('#password').val();
+
+    console.log(username + password + email);
+
+    // Test against regex for form validation:
+    if (!usernameRegex.test(username)) {
+        $('#formMessage').html(`<p>'Invalid username. Must be 3-15 characters long and contain only letters, numbers, and underscores.'</p>`);
+    } else if (!emailRegex.test(email)) {
+        $('#formMessage').html(`<p>'Invalid email format.'</p>`);
+    } else if (!passwordRegex.test(password)) {
+        $('#formMessage').html(`<p>'Password must be at least 8 characters long and contain both letters and numbers.'</p>`);
+    } else {
+        // if passed all regex tests:
+        $('#formMessage').html('');
+        // set user equal to the username:
+        user = username;
+        console.log(user);
+        // set the logged in user span to the user value:
+        checkForLoggedInUser();
+        // Move to slide 2 of section 1:
+        fullpage_api.moveTo(1, 1); // go to slide #2
+    }
+});
+
+function checkForLoggedInUser() {
+    if (!user) {
+        console.log("Log In");
+    } else {
+        console.log(user);
+        $('#slide2').html(`<h2> Hey, <span id="loggedInUser">${user}</span> ! </h2>`)
+    }
+};
+
+checkForLoggedInUser(); // because no value is assigned to user it treats as false
 
 
 }); // END OF JAVASCRIPT

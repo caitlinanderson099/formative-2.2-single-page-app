@@ -203,12 +203,7 @@ nav {
 
 
 /* -------- SHOP ALL SECTION ----------- */
-/* #shopAllSection {
-    padding-top: 55px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-} */
+
 
 
 
@@ -221,7 +216,36 @@ nav {
 
 /* this is selecting the second div of section */
 .section:nth-child(2) {
-    background-color: #e74c3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 80px;
+    background-color: #101110;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    input {
+        padding: 15px;
+        border-radius: 8px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+    }
+
+    button {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        padding: 15px;
+        border-radius: 8px;
+        border: 2px solid #101110;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #101110;
+        color: #eeba2b;
+        border: 2px solid #eeba2b;
+        transition: all 0.3s ease;
+    }
 }
 
 /* this is selecting the third div of section */
