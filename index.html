@@ -98,14 +98,37 @@
     </div>
 
     <div class="section" id="shopAllSection"> 
-        <h2>Shop All </h2>
+        <h2>Shop All Products </h2>
+
+        <div class="filter-and-sort-cont">
+            <div class="filter-cont">
+                <label for="finish"> Finish: </label>
+                <select name="finish" id="finish"> 
+                    <option value="">All</option> 
+                    <option value="Sterling Silver">Sterling Silver</option> 
+                    <option value="Gold">Gold</option> 
+                    <option value="Rose Gold">Rose Gold</option> 
+                </select>
+            </div>
+    
+            <div class="sorting-cont">
+                <button id="">$ - $$</button>
+                <button id="">$$ - $</button>
+                <button id="">A - Z</button>
+            </div>
+        </div>
+        
+            
         <!-- can us this type of layout for card carousel -->
-        <div class="slide">slide 1</div>
-        <div class="slide"> slide 2</div>
-        <div class="slide">slide 3</div>
-        <div class="slide">slide 4</div>
-        <div class="slide">slide 5</div>
-        <div class="slide">slide 6</div>
+        <div id="cards">
+            <div class="slide all-cards"> slide 1 </div>
+            <div class="slide all-cards"> slide 2</div>
+            <div class="slide all-cards">slide 3</div>
+            <div class="slide all-cards">slide 4</div>
+            <div class="slide all-cards">slide 5</div>
+            <div class="slide all-cards">slide 6</div>
+        </div>
+      
     </div>
     <div class="section"> Shop Necklaces </div>
     <div class="section"> Shop Earrings </div>

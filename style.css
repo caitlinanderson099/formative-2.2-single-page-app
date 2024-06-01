@@ -63,7 +63,7 @@ nav {
     justify-content: center;
     border-radius: 50%;
     border: 2px solid #101110;
-    font-size: 2em;
+    font-size: 1.4em;
     background-color: white;
     color: #101110;
     padding: 10px;
@@ -236,6 +236,8 @@ nav {
         padding: 15px;
         border-radius: 8px;
         border: 2px solid #101110;
+        background-color: white;
+        color: #101110;
         cursor: pointer;
         transition: all 0.3s ease;
     }
@@ -249,9 +251,75 @@ nav {
 }
 
 /* this is selecting the third div of section */
+/* SHOP ALL SECTION */
 .section:nth-child(3) {
-    background-color: #9b59b6;
+    background-color: #101110;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    /* This is the placement of the slide arrows so that they are aligned with thr cards */
+    .fp-arrow {
+        margin-top: 5%;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+        padding: 0px;
+    }
+
+    #shopAllSection {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filter-and-sort-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 40px;
+
+        .filter-cont {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.7em;
+
+            select {
+                padding: 10px;
+                border-radius: 8px;
+            }
+        }
+
+        .sorting-cont {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            button {
+                padding: 10px;
+                border-radius: 8px;
+                background-color: white;
+                border: 2px solid #101110;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            button:hover {
+                color: #eeba2b;
+                border: 2px solid #eeba2b;
+                background-color: #101110;
+                transition: all 0.3s ease;
+            }
+        }
+    }
 }
+
+
 
 /* this is selecting the fourth div of section */
 .section:nth-child(4) {
@@ -267,3 +335,9 @@ nav {
 .section:nth-child(6) {
     background-color: #96183c;
 }
+
+/* swiper css */
+.swiper {
+    width: 600px;
+    height: 300px;
+  }
