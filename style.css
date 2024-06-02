@@ -52,6 +52,15 @@ nav {
     }
 }
 
+/* Hamburger Items */
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    font-weight: 800;
+    color: antiquewhite;
+}
+
 /* -------------- Shopping Cart Icon -------------- */
 
 .fixed-cart {
@@ -257,7 +266,6 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
     /* This is the placement of the slide arrows so that they are aligned with thr cards */
     .fp-arrow {
@@ -268,62 +276,72 @@ nav {
         margin-bottom: 10px;
         padding: 0px;
     }
+}
 
-    #shopAllSection {
-        display: flex;
-        flex-direction: column;
-    }
+#shopAllSection,
+#shopNecklaceSection,
+#shopEarringsSection,
+#shopRingsSection {
+    display: flex;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
-    .filter-and-sort-cont {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        margin-bottom: 40px;
-
-        .filter-cont {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 0.7em;
-
-            select {
-                padding: 10px;
-                border-radius: 8px;
-            }
-        }
-
-        .sorting-cont {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-
-            button {
-                padding: 10px;
-                border-radius: 8px;
-                background-color: white;
-                border: 2px solid #101110;
-                cursor: pointer;
-                transition: all 0.3s ease;
-            }
-
-            button:hover {
-                color: #eeba2b;
-                border: 2px solid #eeba2b;
-                background-color: #101110;
-                transition: all 0.3s ease;
-            }
-        }
+    h2 {
+        padding-top: 60px;
     }
 }
 
 
-
 /* this is selecting the fourth div of section */
 .section:nth-child(4) {
-    background-color: #96183c;
+    background-color: #101110;
+}
+
+/* These are the filter and sorting options in the sections */
+.filter-and-sort-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+
+    .filter-cont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 0.7em;
+
+        select {
+            padding: 10px;
+            border-radius: 8px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bold;
+        }
+    }
+
+    .sorting-cont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        button {
+            padding: 10px;
+            border-radius: 8px;
+            background-color: white;
+            border: 2px solid #101110;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            color: #eeba2b;
+            border: 2px solid #eeba2b;
+            background-color: #101110;
+            transition: all 0.3s ease;
+        }
+    }
 }
 
 /* this is selecting the fifth div of section */
@@ -341,3 +359,30 @@ nav {
     width: 600px;
     height: 300px;
   }
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .hamburger #closeHam {
+        display: none;
+    }
+
+    .navigation-items {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 58px;
+        width: 100%;
+        height: calc(100vh - 58px);         /*calc will help calcuate the height*/
+        background-color: lightpink;
+        padding-top: 60px;
+        gap: 10vh;
+    }
+}

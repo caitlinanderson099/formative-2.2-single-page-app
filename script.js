@@ -298,6 +298,8 @@ const jewelleryCards = [
     }
 ] // END OF DATA ARRAY
 
+
+
 // Set up a variable to track the user:
 let user;
 
@@ -350,41 +352,10 @@ function checkForLoggedInUser() {
 checkForLoggedInUser(); // because no value is assigned to user it treats as false
 
 
-// function populateCards() {
-//     const cardsContainer = $('#cards');
-
-//     cardsContainer.empty();
-
-//     $.each(jewelleryCards, function(index, item) {
-//         let cardHtml = 
-//         ` <div class="all-cards">
-//         <div class="swiper">
-//             <div class="swiper-wrapper">
-//             <div class="swiper-slide"> 1 </div>
-//             <div class="swiper-slide"> 2 </div>
-//             <div class="swiper-slide"> 3 </div>
-//             ...
-//             </div>
-//         <div class="swiper-pagination"></div>
-//         </div>
-//         <h3> ${jewelleryCards.name} </h3>
-//         <h3> ${jewelleryCards.price} </h3>
-//         <h4> ${jewelleryCards.category} </h4>
-
-//         </div>
-        
-//         `;
-
-//         cardsContainer.append(cardHtml);
-//     });
-// }
-
-// populateCards();
 
 
 
-
-// swiper intiialisation
+// swiper initialization
 const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'vertical',
