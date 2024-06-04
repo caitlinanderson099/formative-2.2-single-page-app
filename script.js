@@ -120,20 +120,20 @@ $(document).ready(function () {
         // ROSE GOLD
         {
             id: 7,
-            name: 'Rose Gold Dragonfly Pendant Necklace',
-            price: '$28.00',
+            name: 'Rose Gold Double Heart Necklace',
+            price: '$6.00',
             category: 'Necklaces',
             finish: 'Rose Gold',
-            images: ['img/necklaces/dragonfly-rose-gold.webp', 'img/necklaces/dragonfly-rose-gold(2).webp'],
+            images: ['img/necklaces/double-heart-rose-gold.webp', 'img/necklaces/double-heart-rose-gold(2).webp', 'img/necklaces/double-heart-rose-gold(3).webp'],
             description: 'For an ethereal addition to your stack, style this rose gold pendant necklace.'
         },
         {
             id: 8,
-            name: 'Rose Gold Curb & Cable Layered Necklace',
-            price: '$6.00',
+            name: 'Rose Gold Rose Link Necklace',
+            price: '$8.00',
             category: 'Necklaces',
             finish: 'Rose Gold',
-            images: ['img/necklaces/layered-rose-gold.webp', 'img/necklaces/layered-rose-gold(2).webp'],
+            images: ['img/necklaces/link-rose-gold.webp', 'img/necklaces/link-rose-gold(2).webp', 'img/necklaces/link-rose-gold(3).webp'],
             description: 'This layered necklace features a paperclip and curb style chain. Chain Length 43-45cm'
         },
         {
@@ -171,43 +171,43 @@ $(document).ready(function () {
         },
         {
             id: 12,
-            name: 'Sterling Silver Braided Ring',
-            price: '$34.00',
+            name: 'Platinum Sterling Silver Cubic Zirconia Pave Ring',
+            price: '$40.00',
             category: 'Rings',
             finish: 'Sterling Silver',
             size: ['SM', 'ML'],
-            images: ['img/rings/braided-sterling-silver.webp', 'img/rings/braided-sterling-silver(2).webp'],
+            images: ['img/rings/pave-sterling-silver.webp', 'img/rings/pave-sterling-silver(2).webp', 'img/rings/pave-sterling-silver(3).webp'],
             description: 'Build a jewellery collection filled with life-long pieces from our Sterling Silver Collection.'
         },
         // GOLD
         {
             id: 13,
-            name: 'Gold Plated Staggered Cubic Zirconia Band Ring',
+            name: 'Gold Plated Oval Bezel Stacking Rings',
             price: '$31.00',
             category: 'Rings',
             finish: 'Gold',
             size: ['SM', 'ML'],
-            images: ['img/rings/staggered-gold.webp', 'img/rings/staggered-gold(2).webp'],
+            images: ['img/rings/bezel-gold.webp', 'img/rings/bezel-gold(2).webp', 'img/rings/bezel-gold(3).webp'],
             description: 'For a glamorous addition to your signature stack, style this gold plated ring.'
         },
         {
             id: 14,
-            name: 'Gold Plated Floral Signet Ring',
+            name: 'Gold Plated Stainless Steel Signet Ring',
             price: '$26.00',
             category: 'Rings',
             finish: 'Gold',
             size: ['SM', 'ML'],
-            images: ['img/rings/floral-gold.webp', 'img/rings/floral-gold(2).webp'],
+            images: ['img/rings/signet-gold.webp', 'img/rings/signet-gold(2).webp', 'img/rings/signet-gold(3).webp'],
             description: 'This timeless ring is plated with real gold and with delicate sunflowers.'
         },
         {
             id: 15,
-            name: 'Gold Plated Mystical Oval Ring',
-            price: '$26.00',
+            name: 'Gold Plated Wrapped Triple Stone Ring',
+            price: '$23.00',
             category: 'Rings',
             finish: 'Gold',
             size: ['SM', 'ML'],
-            images: ['img/rings/oval-gold.webp', 'img/rings/oval-gold(2).webp'],
+            images: ['img/rings/stone-gold.webp', 'img/rings/stone-gold(2).webp', 'img/rings/stone-gold(3).webp'],
             description: 'This dainty ring is plated with real gold for a touch of elegance.'
         },
         // ROSE GOLD
@@ -372,6 +372,8 @@ $(document).ready(function () {
         });
         generateProductCards(sortedProducts);
     }
+
+
 
 
     /** ----------- DYNAMICALLY CREATING PRODUCT CARDS ------------- */
