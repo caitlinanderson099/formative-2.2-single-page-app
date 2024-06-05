@@ -346,7 +346,7 @@ $(document).on('click', '.product-image', function () {
 
 function populateModal(product) {
     const modalContent = `
-    <div id="detailsModal">
+    <div id="modalContent">
     <div class="image-cont">
         <img src="img/jewellery-logo.webp" alt="">
         </div>
