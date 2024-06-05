@@ -423,7 +423,7 @@ const cart = [];
 
         <div class="other-details">
         <h4>${jewelleryCards.price}</h4>
-        <button class="add-to-cart-btn" data-id="${jewelleryCards.id}">  <i class="fa-solid fa-bag-shopping"></i></button>
+        <button>  <i class="fa-solid fa-bag-shopping"></i></button>
     </div>
     </div>
 
@@ -431,41 +431,6 @@ const cart = [];
     </div>
     `;
     }
-
-    // Add event listener to dynamically created "Add to Cart" buttons
-    $(document).on('click', '.add-to-cart-btn', function() {
-        const productId = $(this).data('id');
-        addToCart(productId);
-    });
-
-    // Function to add product to the cart
-    function addToCart(productId) {
-        const product = jewelleryCards.find(item => item.id === productId);
-        if (product) {
-            cart.push(product);
-            updateCartDisplay();
-        }
-    }
-
-    // Function to update cart display
-    function updateCartDisplay() {
-        const cartContainer = $('#cartContainer');
-        cartContainer.empty(); // Clear previous cart content
-        cart.forEach(item => {
-            cartContainer.append(` <p>${item.name} ${item.price}</p>`);
-        });
-    }
-
-    $(".fixed-cart").click(function() {
-        $("#cartContainer").show();
-        console.log('works');
-    })
-
-    $("#closeBtn").click(function() {
-        $("#cartContainer").hide();
-        console.log('works');
-    })
-
 
     function generateProductCards(jewelleryCards) {
         const container = $("#allCards");
@@ -537,7 +502,8 @@ const cart = [];
             console.log("Log In");
         } else {
             console.log(user);
-            $('#slide2').html(`<h2> Hey, <span id="loggedInUser">${user}</span> ! </h2>`)
+            $('#userContainer').html(`<p> Hey, <span id="loggedInUser">${user}</span>! </p>`)
+            event.preventDefault(click); // stop the page from refreshing when clicking submit button
         }
     };
 

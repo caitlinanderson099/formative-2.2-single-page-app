@@ -66,6 +66,12 @@ nav {
             color: #eeba2b;
             transition: all 0.3s ease;
         }
+
+        #userContainer {
+            padding: 0px;
+            font-size: 2em;
+            font-weight: bold;
+        }
     }
 }
 
@@ -222,8 +228,21 @@ nav {
 
     #signUpForm {
         display: flex;
+        justify-content: center;
         width: 100%;
-        justify-content: space-around;
+        gap: 20px;
+
+        button {
+           width: 100px;
+        }
+    }
+
+    #formMessage{
+        font-size: 20px;
+        color: rgb(182, 28, 28);
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
     }
 }
 
@@ -419,42 +438,6 @@ nav {
 
 }
 
-#cartContainer {
-    display: none;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: #eeba2b;
-    /* height: 200px; */
-    width: 150px;
-    padding: 10px;
-    position: absolute;
-    z-index: 100;
-    top: 50%;
-    left: 83%;
-
-    .default-text {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        button {
-           padding: 10px;
-           background-color: #101110;
-           color: white;
-           border-radius: 50%;
-           border: 2px solid #101110;
-           transition: all 0.3s ease;
-           cursor: pointer;
-        }
-
-        button:hover {
-            border: 2px solid #eeba2b;
-            color: #eeba2b;
-            transition: all 0.3s ease;
-        }
-    }
-    
-}
-
 /* These are the filter and sorting options in the sections */
 .filter-and-sort-cont {
     display: flex;
@@ -551,7 +534,7 @@ nav {
     
     /* CART ICON */
     .fixed-cart {
-        display: none;
+       display: none;
     }
 
 
@@ -583,14 +566,15 @@ nav {
 
         #signUpForm {
             flex-direction: column;
-            gap: 10px;
             justify-content: center;
+            gap: 10px;
         }
 
-        #formMessage {
-            font-size: 0.5em;
+        #formMessage{
+            font-size: 15px;
             color: rgb(182, 28, 28);
             font-weight: bold;
+            padding: 10px;
         }
 
         h3 {
@@ -743,4 +727,48 @@ nav {
     
   
 /* end of mobile query */
+}
+
+@media screen and (max-width: 500px) {
+    #allCards {
+        grid-template-columns: 1fr;
+    }
+
+    #shopAllSection h2 {
+        padding-top: 0px;
+    }
+
+    .swiper-container{
+        max-height: 100%;
+
+        .product-image {
+            min-height: 300px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .product-card .product-details {
+        font-size: 14px;
+    }
+
+    .filter-and-sort-cont {
+        max-width: 100%;
+        margin-bottom: 10px;
+
+        select {
+            width: 300px;
+        }
+    }
+
+    .sorting-cont {
+        button {
+            font-size: 15px;
+        }
+    }
+
+    .filter-cont {
+        max-width: 100%;
+        flex-direction: column;
+    }
 }
