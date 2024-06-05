@@ -332,21 +332,7 @@ $(document).ready(function () {
     ] // END OF DATA ARRAY
 
 
-/** ------------ ADD TO CART DATA ARRAY ------------ */
-
-const cart = [];
-
-
-
-
-
-
-
-
 /** ------------ MODAL FUNCTIONS ------------ */
-
-
-
 
 
 
