@@ -40,7 +40,15 @@
     </nav>
 
     <div class="fixed-cart">
-        <i class="fa-solid fa-bag-shopping"></i></i>
+        <i class="fa-solid fa-bag-shopping"></i>
+    </div>
+
+    <div id="cartContainer">
+        <div class="default-text">
+            <h3> Your Cart </h3>
+            <button id="closeBtn"> <i class="fa-solid fa-xmark"></i> </button>
+        </div>
+        <!-- Cart items will be displayed here -->
     </div>
 
 
@@ -115,6 +123,7 @@
                     <button id="alphabetical-btn">A - Z</button>
                 </div>
             </div>
+          
             <!-- Card Grid -->
             <div id="allCards">
                 <!-- populated via js -->
@@ -145,18 +154,11 @@
             <!-- end of gallery section -->
         </div>
 
-
         <!-- end of full page js -->
     </div>
 
     <!-- CARD MODALS -->
-    <dialog id="detailsModal" class="modal">
-        <div class="modal-content">
-            <span id="openModal" class="open">&times;</span>
-            <span id="closeModal" class="close">&times;</span>
-            <!-- populated via JavaScript -->
-        </div>
-    </dialog>
+   
 
 
 

@@ -12,7 +12,7 @@ $(document).ready(function () {
         autoScrolling: true,
         scrollHorizontally: true,
         // turn on navigation arrows
-        // navigation: true, // comment out or remove to remove nav arrows
+        navigation: true, // comment out or remove to remove nav arrows
         controlArrows: true, // this takes off the arrows for slides
 
     });
@@ -332,36 +332,20 @@ $(document).ready(function () {
     ] // END OF DATA ARRAY
 
 
+/** ------------ ADD TO CART DATA ARRAY ------------ */
+
+const cart = [];
+
+
+
+
+
+
+
 
 /** ------------ MODAL FUNCTIONS ------------ */
 
 
-$(document).on('click', '.product-image', function () {
-    const index = $(this).closest('.product-card').index();
-    const selectedProduct = jewelleryCards[index];
-    populateModal(selectedProduct);
-    $('#detailsModal').show();
-    console.log('working');
-});
-
-function populateModal(product) {
-    const modalContent = `
-    <div id="modalContent">
-    <div class="image-cont">
-        <img src="img/jewellery-logo.webp" alt="">
-        </div>
-        <h2> ${product.name}</h2>
-        <h4> ${product.finish} | ${product.category}</h4> 
-        <h5> ${product.price}</h5>
-        <p> ${product.description}</p>   
-        </div>
-    `;
-    $('#detailsModal .modal-content').html(modalContent);
-}
-
-$('#closeModal').click(function() {
-    $('#detailsModal').hide();
-});
 
 
 
@@ -439,7 +423,7 @@ $('#closeModal').click(function() {
 
         <div class="other-details">
         <h4>${jewelleryCards.price}</h4>
-        <button>  <i class="fa-solid fa-bag-shopping"></i>  </button>
+        <button class="add-to-cart-btn" data-id="${jewelleryCards.id}">  <i class="fa-solid fa-bag-shopping"></i></button>
     </div>
     </div>
 
@@ -448,11 +432,46 @@ $('#closeModal').click(function() {
     `;
     }
 
+    // Add event listener to dynamically created "Add to Cart" buttons
+    $(document).on('click', '.add-to-cart-btn', function() {
+        const productId = $(this).data('id');
+        addToCart(productId);
+    });
+
+    // Function to add product to the cart
+    function addToCart(productId) {
+        const product = jewelleryCards.find(item => item.id === productId);
+        if (product) {
+            cart.push(product);
+            updateCartDisplay();
+        }
+    }
+
+    // Function to update cart display
+    function updateCartDisplay() {
+        const cartContainer = $('#cartContainer');
+        cartContainer.empty(); // Clear previous cart content
+        cart.forEach(item => {
+            cartContainer.append(` <p>${item.name} ${item.price}</p>`);
+        });
+    }
+
+    $(".fixed-cart").click(function() {
+        $("#cartContainer").show();
+        console.log('works');
+    })
+
+    $("#closeBtn").click(function() {
+        $("#cartContainer").hide();
+        console.log('works');
+    })
+
+
     function generateProductCards(jewelleryCards) {
         const container = $("#allCards");
         container.empty(); // Clear previous content
-        jewelleryCards.forEach(jewelleryCard => {
-            const cardHTML = allProducts(jewelleryCard);
+        jewelleryCards.forEach(jewelleryCards => {
+            const cardHTML = allProducts(jewelleryCards);
             container.append(cardHTML);
         });
 
