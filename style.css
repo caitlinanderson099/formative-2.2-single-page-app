@@ -3,6 +3,7 @@
 
 body {
     scroll-behavior: smooth;
+    text-decoration: none;
 }
 
 
@@ -657,6 +658,7 @@ nav {
     /* SHOP ALL SECTION */
 
     #shopAllSection {
+        padding: 50px;
 
         #allCards {
             grid-template-columns: 1fr;
