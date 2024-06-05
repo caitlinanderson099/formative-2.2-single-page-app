@@ -19,7 +19,7 @@ $(document).ready(function () {
 
     // fullpage_api.setAllowScrolling(false); // this prevents the scroll of the sections and slides, can't scroll either way can only use buttons
 
- /** --------- HAMBURGER MENU EVENT FOR RESPONSIVENESS ------------ */
+    /** --------- HAMBURGER MENU EVENT FOR RESPONSIVENESS ------------ */
 
     let openHam = $("#openHam");
     let closeHam = $("#closeHam");
@@ -40,7 +40,7 @@ $(document).ready(function () {
     });
 
 
-   /** ----------- LANDING PAGE SECTION BUTTONS ------------ */
+    /** ----------- LANDING PAGE SECTION BUTTONS ------------ */
     function moveToSection(number) {
         fullpage_api.moveTo(number);
     };
@@ -332,9 +332,63 @@ $(document).ready(function () {
     ] // END OF DATA ARRAY
 
 
-/** ------------ MODAL FUNCTIONS ------------ */
+    /** ------------ MODAL FUNCTIONS ------------ */
+
+    // Define a global variable to hold the Swiper instance
+    let mySwiper;
+
+    // Modal Functions
+    function openModal(content) {
+        $('#productModal .modal-body').html(content);
+        $('#productModal').fadeIn();
+        $('body').addClass('no-scroll'); // Prevent background scrolling
+
+        // Initialize Swiper after modal content is loaded
+        setTimeout(function () {
+            mySwiper = new Swiper('.modal-images .swiper-container .swiper', {
+                direction: 'vertical',
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            });
+        }, 500); // Adjust this timeout value as needed
+    }
+
+    function closeModal() {
+        $('#productModal').fadeOut();
+        $('body').removeClass('no-scroll'); // Allow background scrolling
 
 
+        // Destroy Swiper instance when modal is closed to prevent memory leaks
+        if (mySwiper) {
+            mySwiper.destroy();
+        }
+    }
+
+    $(document).on('click', '.product-image', function () {
+        const productId = $(this).closest('.product-card').data('id');
+        const product = jewelleryCards.find(item => item.id === productId);
+        const modalContent = `
+    <div class="modal-images">
+        
+    ${product.images.map(img => `<img src="${img}" alt="${product.name}">`).join('')} </div>
+    <h2>${product.name}</h2>
+    <h4>${product.finish} | ${product.category}</h4>
+    <h3>${product.price}</h3>
+    <p>${product.description}</p>
+    <button><i class="fa-solid fa-bag-shopping"></i> Add To Cart </button>
+    `;
+        openModal(modalContent);
+    });
+
+    $(document).on('click', '.close', closeModal);
+    $(window).on('click', function (event) {
+        if ($(event.target).is('#productModal')) {
+            closeModal();
+        }
+    });
 
 
 
@@ -390,7 +444,7 @@ $(document).ready(function () {
 
     function allProducts(jewelleryCards) {
         return `
-        <div class="product-card"> 
+        <div class="product-card" data-id="${jewelleryCards.id}"> 
         <div class="swiper-container"> <!-- Add this class -->
         <div class="swiper">
             <div class="swiper-wrapper">
