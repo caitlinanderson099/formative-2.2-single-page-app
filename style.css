@@ -7,6 +7,10 @@ body {
     text-decoration-color: #101110;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* THE NAVIGATION DOTS ON THE RIGHT */
 #fp-nav ul li a span {
     background-color: #eeba2b;  
