@@ -19,7 +19,8 @@ $(document).ready(function () {
 
     // fullpage_api.setAllowScrolling(false); // this prevents the scroll of the sections and slides, can't scroll either way can only use buttons
 
-    // Hamburger Menu Event
+ /** --------- HAMBURGER MENU EVENT FOR RESPONSIVENESS ------------ */
+
     let openHam = $("#openHam");
     let closeHam = $("#closeHam");
     let navigationItems = $(".nav-items");
@@ -31,15 +32,15 @@ $(document).ready(function () {
     }
 
     openHam.click(function () {
-        hamburgerEvent("block", "block", "none");
+        hamburgerEvent("flex", "flex", "none");
     });
 
     closeHam.click(function () {
-        hamburgerEvent("none", "none", "block");
+        hamburgerEvent("none", "none", "flex");
     });
 
 
-    // Landing Page Button Event
+   /** ----------- LANDING PAGE SECTION BUTTONS ------------ */
     function moveToSection(number) {
         fullpage_api.moveTo(number);
     };
@@ -330,6 +331,46 @@ $(document).ready(function () {
         }
     ] // END OF DATA ARRAY
 
+
+
+/** ------------ MODAL FUNCTIONS ------------ */
+
+
+$(document).on('click', '.product-image', function () {
+    const index = $(this).closest('.product-card').index();
+    const selectedProduct = jewelleryCards[index];
+    populateModal(selectedProduct);
+    $('#detailsModal').show();
+    console.log('working');
+});
+
+function populateModal(product) {
+    const modalContent = `
+    <div id="detailsModal">
+    <div class="image-cont">
+        <img src="img/jewellery-logo.webp" alt="">
+        </div>
+        <h2> ${product.name}</h2>
+        <h4> ${product.finish} | ${product.category}</h4> 
+        <h5> ${product.price}</h5>
+        <p> ${product.description}</p>   
+        </div>
+    `;
+    $('#detailsModal .modal-content').html(modalContent);
+}
+
+$('#closeModal').click(function() {
+    $('#detailsModal').hide();
+});
+
+
+
+
+
+
+
+    /** ----------- FILTERING AND SORTING FUNCTIONS --------------- */
+
     // Add event listeners to filter and sorting elements
     $('#finish, #category').change(filterProducts);
     $('#price-low-to-high-btn').click(sortProductsLowToHigh);
@@ -372,7 +413,6 @@ $(document).ready(function () {
         });
         generateProductCards(sortedProducts);
     }
-
 
 
 
@@ -431,9 +471,7 @@ $(document).ready(function () {
     generateProductCards(jewelleryCards);
 
 
-
-
-
+    /** -------------- USER INPUT JAVASCRIPT ----------- */
 
     // Set up a variable to track the user:
     let user;
@@ -485,9 +523,6 @@ $(document).ready(function () {
     };
 
     checkForLoggedInUser(); // because no value is assigned to user it treats as false
-
-
-
 
 
 

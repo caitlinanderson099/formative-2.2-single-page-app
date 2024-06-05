@@ -203,7 +203,18 @@ nav {
 
 /* ------------- SIGN UP FORM PAGE ----------- */
 
+#signUpSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
 
+    #signUpForm {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+}
 
 
 
@@ -322,10 +333,9 @@ nav {
         /* product images */
         .product-image {
             width: 100%;
-            /* object-fit: cover; */
-            object-position: center;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
+            cursor: pointer;
         }
 
         /* heading, category and finish */
@@ -360,24 +370,57 @@ nav {
 
 }
 
+/* Modal styling */
+#detailsModal {
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    top: 10%;
+    width: 300px;
+    background-color: #eeba2b;
 
-#shopAllSection,
-#shopNecklaceSection,
-#shopEarringsSection,
-#shopRingsSection {
+    img {
+        width: 300px;
+    }
+}
+
+/* end of modal */
+
+
+
+#shopAllSection {
     display: flex;
     flex-direction: column;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-top: 20px;
 
     h2 {
         padding-top: 60px;
     }
 }
 
-
-/* this is selecting the fourth div of section */
 .section:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #101110;
+    text-align: center;
+    padding-top: 80px;
+
+    h2 {
+        padding-top: 50px;
+        margin: 0px;
+    }
+
+    .fp-arrow {
+        margin-top: 70px;
+    }
+    
+    img {
+        max-width: 300px;
+        max-height: 300px;
+    }
 }
 
 /* These are the filter and sorting options in the sections */
@@ -427,16 +470,6 @@ nav {
     }
 }
 
-/* this is selecting the fifth div of section */
-.section:nth-child(5) {
-    background-color: #352649;
-}
-
-/* this is selecting the sixth div of section */
-.section:nth-child(6) {
-    background-color: #96183c;
-}
-
 
 /* Media Queries */
 
@@ -450,35 +483,131 @@ nav {
         display: none;
     }
 
-    .nav-items {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        right: 0;
-        top: 58px;
-        width: 100%;
-        height: calc(100vh - 58px);
-        /*calc will help calcuate the height*/
-        background-color: #101110;
-        padding-top: 60px;
 
+    #navbar {
 
-        a {
-            color: white !important;
+        .nav-items {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-content: space-around;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            top: 58px;
+            width: 100%;
+            height: calc(100vh - 58px);
+            /*calc will help calcuate the height*/
+            background-color: white;
+            padding-top: 60px;
+    
+    
+            a {
+                color: #101110 !important;
+                font-size: 2em;
+            }
+    
+            .fa-user {
+                display: none;
+            }
         }
-
-        .fa-user {
-            color: white !important;
-        }
-
-        .logo {
-            display: none;
-        }
+    
     }
-
+    
     .fixed-cart {
         display: none;
     }
+
+
+    /* landing page */
+    .left-half .title {
+        font-size: 1.3em;
+    }
+
+    .left-half {
+        .buttons {
+            button {
+                padding: 9px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .right-half {
+        padding-left: 30px;
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    /* sign up page */
+    #signUpSection {
+        padding: 50px;
+
+        #signUpForm {
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        #formMessage {
+            font-size: 0.5em;
+            color: rgb(182, 28, 28);
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 0.7em;
+            text-align: center;
+        }
+    }
+
+    /* shop all section */
+    #shopAllSection {
+        padding: 50px;
+
+        h2 {
+            font-size: 1em;
+        }
+
+        .filter-and-sort-cont {
+            flex-direction: column;
+
+            button {
+                padding: 15px;
+                font-weight: bold;
+            }
+        }
+
+        #allCards {
+            grid-template-columns: repeat(2, 1fr);
+
+            .product-card {
+                font-size: 17px;
+            }
+        }
+    }
+
+    /* gallery page */
+    #gallerySection {
+        padding: 50px;
+
+        h2 {
+            font-size: 1em;
+        }
+
+        .fp-arrow {
+            margin-top: 10px;
+        }
+
+        img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+
+
+/*END OF MEDIA QUERY TABLET  */
 }

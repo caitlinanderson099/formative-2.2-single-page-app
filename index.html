@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JQUERY UI -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/smoothness/jquery-ui.css">
     <!-- Swiper Js Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Fullpage CSS -->
@@ -18,11 +20,10 @@
 
     <nav id="navbar">
         <div class="nav-items">
+            <div class="logo"></div>
             <a href="#landingPage"> Home </a>
             <a href="#shopAllSection"> Catalogue </a>
-            <div class="logo"></div>
-            <a href="#contactUsSection"> Contact Us </a>
-            <a href="#locationSection"> Location </a>
+            <a href="#gallerySection"> Gallery </a>
 
             <i class="fa-solid fa-user"></i>
         </div>
@@ -68,16 +69,8 @@
             <!-- end of the section -->
         </div>
 
-
-
-
-
-
         <!-- SIGN UP FORM SECTION -->
 
-
-        <!-- SECTION - these are the verticals, must have at least one  -->
-        <!-- SLIDES - horizontal, they live inside of the SECTIONS -->
         <div class="section" id="signUpSection">
 
             <h3> Welcome! Please Log In/ Sign Up Here</h3>
@@ -88,13 +81,7 @@
                 <button id="submitButton">Sign Up</button>
             </form>
             <div id="formMessage"></div>
-
-
-            <!-- end of slide #1 -->
         </div>
-
-
-
 
 
         <!-- SHOP ALL SECTION -->
@@ -126,114 +113,50 @@
                     <button id="alphabetical-btn">A - Z</button>
                 </div>
             </div>
-
-
+            <!-- Card Grid -->
             <div id="allCards">
                 <!-- populated via js -->
             </div>
 
         </div>
 
-        <!-- CONTACT US SECTION -->
-        <div class="section" id="contactUsSection">
-            <h2>Contact Us</h2>
-            <div class="filter-and-sort-cont">
-                <div class="filter-cont">
-                    <label for="finish"> Finish: </label>
-                    <select name="finish" id="finish">
-                        <option value="">All</option>
-                        <option value="Sterling Silver">Sterling Silver</option>
-                        <option value="Gold">Gold</option>
-                        <option value="Rose Gold">Rose Gold</option>
-                    </select>
-                </div>
+        <!-- GALLERY SECTION -->
+        <div class="section" id="gallerySection">
+            <h2> Gallery </h2>
 
-                <div class="sorting-cont">
-                    <button id="">$$ - $$$</button>
-                    <button id="">$$$ - $$</button>
-                    <button id="">A - Z</button>
-                </div>
+               <!-- image slide #1 -->
+               <div class="slide">
+                <img src="/img/store-image.webp" alt="">
+                <img src="/img/store-image(2).webp" alt="">
+                <img src="/img/store-image(3).webp" alt="">
+                <img src="/img/store-image(4).webp" alt="">
             </div>
 
-            <div class="slide">
-                <div class="card"></div>
+              <!-- image slide #2 -->
+              <div class="slide">
+                <img src="/img/store-image(5).webp" alt="">
+                <img src="/img/store-image(6).webp" alt="">
+                <img src="/img/store-image(7).webp" alt="">
+                <img src="/img/store-image(8).webp" alt="">
             </div>
-            <div class="slide"> </div>
-            <div class="slide"> </div>
-            <div class="slide"> </div>
-            <div class="slide"> </div>
 
+            <!-- end of gallery section -->
         </div>
-
-        <!-- LOCATION SECTION -->
-        <div class="section" id="locationSection">
-            <h2>Location</h2>
-            <div class="filter-and-sort-cont">
-                <div class="filter-cont">
-                    <label for="finish"> Finish: </label>
-                    <select name="finish" id="finish">
-                        <option value="">All</option>
-                        <option value="Sterling Silver">Sterling Silver</option>
-                        <option value="Gold">Gold</option>
-                        <option value="Rose Gold">Rose Gold</option>
-                    </select>
-                </div>
-
-                <div class="sorting-cont">
-                    <button id="">$$ - $$$</button>
-                    <button id="">$$$ - $$</button>
-                    <button id="">A - Z</button>
-                </div>
-            </div>
-
-
-            <div class="slide">
-                <div class="card"></div>
-            </div>
-            <div class="slide"> </div>
-            <div class="slide"> </div>
-            <div class="slide"> </div>
-            <div class="slide"> </div>
-
-        </div>
-
-
-        <!-- SHOP RINGS SECTION -->
-        <!-- <div class="section" id="shopRingsSection">
-            <h2>Shop Rings</h2>
-            <div class="filter-and-sort-cont">
-                <div class="filter-cont">
-                    <label for="finish"> Finish: </label>
-                    <select name="finish" id="finish">
-                        <option value="">All</option>
-                        <option value="Sterling Silver">Sterling Silver</option>
-                        <option value="Gold">Gold</option>
-                        <option value="Rose Gold">Rose Gold</option>
-                    </select>
-                </div>
-
-                <div class="sorting-cont">
-                    <button id="">$$ - $$$</button>
-                    <button id="">$$$ - $$</button>
-                    <button id="">A - Z</button>
-                </div>
-            </div>
-
-            <div class="slide">
-                <div class="card"></div>
-            </div>
-            <div class="slide"> </div>
-            <div class="slide"> </div>
-            <div class="slide"> </div>
-            <div class="slide"> </div>
-        </div> -->
-
-
-
 
 
         <!-- end of full page js -->
     </div>
+
+    <!-- CARD MODALS -->
+    <dialog id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span id="openModal" class="open">&times;</span>
+            <span id="closeModal" class="close">&times;</span>
+            <!-- populated via JavaScript -->
+        </div>
+    </dialog>
+
+
 
     <!-- JQUERY LINK -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
