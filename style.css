@@ -1,17 +1,24 @@
 /* --------- Google Font Import ------------- */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+
+
+/* -------------- Body Css -------------- */
+
 body {
     scroll-behavior: smooth;
     text-decoration: none;
     text-decoration-color: #101110;
 }
 
+/* -------------- 'A' Tag Css -------------- */
+
 a {
     text-decoration: none;
 }
 
-/* Modal CSS */
+/* -------------- Modal Css -------------- */
+
 .modal {
     display: none;
     position: fixed;
@@ -23,10 +30,6 @@ a {
     overflow: hidden; /* This stop the modal from moving when users scroll as the modal is open */
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
-}
-
-.no-scroll {
-    overflow: hidden;
 }
 
 .modal-content {
@@ -122,6 +125,7 @@ a {
 
 }
 
+/* Close Button for Modal */
 .close {
     padding: 10px;
     color: #aaa;
@@ -138,8 +142,8 @@ a {
     cursor: pointer;
 }
 
+/* -------------- Fullpage Side Navigation Dots -------------- */
 
-/* THE NAVIGATION DOTS ON THE RIGHT */
 #fp-nav ul li a span {
     background-color: #eeba2b;
 }
@@ -253,7 +257,7 @@ nav {
 
 /* ------------ LANDING PAGE -------------- */
 
-/* To ensure items are in a row across the section */
+/* This is to ensure items are in a row across the section */
 .row {
     display: flex;
     flex-direction: row;
@@ -374,19 +378,6 @@ nav {
     }
 }
 
-/* -------- SHOP ALL SECTION ----------- */
-
-
-
-
-/* COLOURING FOR SECTIONS, CHANGE AND POSSIBLY DELETE LATER ON */
-
-/* this is selecting the first div of section */
-.section:nth-child(1) {
-    background-color: #101110;
-}
-
-/* this is selecting the second div of section */
 .section:nth-child(2) {
     display: flex;
     align-items: center;
@@ -422,8 +413,9 @@ nav {
     }
 }
 
-/* this is selecting the third div of section */
-/* SHOP ALL SECTION */
+
+/* -------------- Shop All Section -------------- */
+
 .section:nth-child(3) {
     background-color: #101110;
     display: flex;
@@ -516,52 +508,7 @@ nav {
 
     }
 
-}
-
-
-
-#shopAllSection {
-    display: flex;
-    flex-direction: column;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding-top: 20px;
-
-    h2 {
-        padding-top: 60px;
-    }
-}
-
-/* -------- GALLERY SECTION ------------ */
-
-.section:nth-child(4) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #101110;
-    text-align: center;
-    padding-top: 80px;
-
-    h2 {
-        padding-top: 50px;
-        margin: 0px;
-    }
-
-    .fp-arrow {
-        margin-top: 70px;
-    }
-
-    img {
-        border-radius: 10px;
-        max-width: 300px;
-        max-height: 300px;
-        object-fit: cover;
-        cursor: pointer;
-    }
-
-}
-
-/* These are the filter and sorting options in the sections */
+/* These are the filter and sorting options */
 .filter-and-sort-cont {
     display: flex;
     justify-content: center;
@@ -608,15 +555,55 @@ nav {
     }
 }
 
+}
+
+#shopAllSection {
+    display: flex;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-top: 20px;
+
+    h2 {
+        padding-top: 60px;
+    }
+}
+
+/* -------------- Gallery Section -------------- */
+
+
+.section:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #101110;
+    text-align: center;
+    padding-top: 80px;
+
+    h2 {
+        padding-top: 50px;
+        margin: 0px;
+    }
+
+    .fp-arrow {
+        margin-top: 70px;
+    }
+
+    img {
+        border-radius: 10px;
+        max-width: 300px;
+        max-height: 300px;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+}
 
 
 
 
+/* -------------- Media Queries -------------- */
 
-
-
-
-/* Media Queries */
 
 /* TABLET */
 @media screen and (max-width: 768px) {
@@ -758,9 +745,6 @@ nav {
             object-fit: cover;
         }
     }
-
-
-    /*END OF MEDIA QUERY TABLET  */
 }
 
 
@@ -856,11 +840,9 @@ nav {
         flex-direction: column;
         align-items: center;
     }
-
-
-    /* end of mobile query */
 }
 
+/* SMALLER MOBILE */
 @media screen and (max-width: 500px) {
     #allCards {
         grid-template-columns: 1fr;
@@ -903,4 +885,4 @@ nav {
         max-width: 100%;
         flex-direction: column;
     }
-}
+};

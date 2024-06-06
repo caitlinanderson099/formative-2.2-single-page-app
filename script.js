@@ -1,6 +1,4 @@
-// WITH JQUERY and FULL PAGE JS
-
-// JUST BASE STUFF, ADAPT THIS LATER ON WHEN STARTING THE CODE
+/* -------------- Start of jQuery Document -------------- */
 
 $(document).ready(function () {
 
@@ -17,9 +15,9 @@ $(document).ready(function () {
 
     });
 
-    // fullpage_api.setAllowScrolling(false); // this prevents the scroll of the sections and slides, can't scroll either way can only use buttons
 
-    /** --------- HAMBURGER MENU EVENT FOR RESPONSIVENESS ------------ */
+    /* -------------- Hamburger Menu Event for Smaller Devices -------------- */
+
 
     let openHam = $("#openHam");
     let closeHam = $("#closeHam");
@@ -40,7 +38,8 @@ $(document).ready(function () {
     });
 
 
-    /** ----------- LANDING PAGE SECTION BUTTONS ------------ */
+  /* -------------- Landing Page MoveToSection Buttons -------------- */
+
     function moveToSection(number) {
         fullpage_api.moveTo(number);
     };
@@ -56,11 +55,9 @@ $(document).ready(function () {
 
 
 
-    /** ------------- DATA ARRAY FOR PRODUCTS ------------- */
+/* -------------- Data Array of Products -------------- */
 
     const jewelleryCards = [
-        // NECKLACES X3 FOR EACH FINISH (GOLD, STERLING SILVER, ROSE GOLD)
-
 
         // STERLING SILVER
         {
@@ -332,7 +329,8 @@ $(document).ready(function () {
     ] // END OF DATA ARRAY
 
 
-    /** ------------ MODAL FUNCTIONS ------------ */
+/* -------------- Modal Functions -------------- */
+
 
     // Define a global variable to hold the Swiper instance
     let mySwiper;
@@ -381,6 +379,8 @@ $(document).ready(function () {
         openModal(modalContent);
     });
 
+
+    // Modal Close Button
     $(document).on('click', '.close', closeModal);
     $(window).on('click', function (event) {
         if ($(event.target).is('#productModal')) {
@@ -388,10 +388,8 @@ $(document).ready(function () {
         }
     });
 
+    /* -------------- Filter and Sorting Functions -------------- */
 
-
-
-    /** ----------- FILTERING AND SORTING FUNCTIONS --------------- */
 
     // Add event listeners to filter and sorting elements
     $('#finish, #category').change(filterProducts);
@@ -436,9 +434,8 @@ $(document).ready(function () {
         generateProductCards(sortedProducts);
     }
 
+    /* -------------- Dynamic Creation of Product Cards -------------- */
 
-
-    /** ----------- DYNAMICALLY CREATING PRODUCT CARDS ------------- */
 
     function allProducts(jewelleryCards) {
         return `
@@ -493,7 +490,7 @@ $(document).ready(function () {
     generateProductCards(jewelleryCards);
 
 
-    /** -------------- USER INPUT JAVASCRIPT ----------- */ /** EVENTUALLY PUT IN USER INPUT FOR RING SIZES */
+  /* -------------- User Input Functions -------------- */ /** Will eventually put user input functions for ring sizes */
 
     // Set up a variable to track the user:
     let user;
@@ -504,7 +501,7 @@ $(document).ready(function () {
         console.log('working');
 
         // Setup Regex for form validation:
-        const usernameRegex = /^[a-zA-Z0-9_]{3,15}$/;
+        const usernameRegex = /^[a-zA-Z0-9_]{5,15}$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
@@ -517,7 +514,7 @@ $(document).ready(function () {
 
         // Test against regex for form validation:
         if (!usernameRegex.test(username)) {
-            $('#formMessage').html(`<p>'Invalid username. Must be 3-15 characters long and contain only letters, numbers, and underscores.'</p>`);
+            $('#formMessage').html(`<p>'Invalid username. Must be 5-15 characters long and contain only letters, numbers, and underscores.'</p>`);
         } else if (!emailRegex.test(email)) {
             $('#formMessage').html(`<p>'Invalid email format.'</p>`);
         } else if (!passwordRegex.test(password)) {
@@ -549,4 +546,5 @@ $(document).ready(function () {
 
 
 
-}); // END OF JAVASCRIPT
+}); 
+/* -------------- End of jQuery Document -------------- */
