@@ -342,6 +342,15 @@ $(document).ready(function () {
         $('#productModal .modal-body').html(content);
         $('#productModal').fadeIn();
         $('body').addClass('no-scroll'); // Prevent background scrolling
+
+         // Initialize Swiper inside modal
+         new Swiper('.modal-images', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
     }
 
     function closeModal() {
@@ -352,13 +361,22 @@ $(document).ready(function () {
     $(document).on('click', '.product-image', function () {
         const productId = $(this).closest('.product-card').data('id');
         const product = jewelleryCards.find(item => item.id === productId);
-        const modalContent = ` <div class="modal-images">  
-    ${product.images.map(img => `<img src="${img}" alt="${product.name}">`).join('')} </div>
-    <h2>${product.name}</h2>
-    <h4>${product.finish} | ${product.category}</h4>
-    <h3>${product.price}</h3>
-    <p>${product.description}</p>
-    <button><i class="fa-solid fa-bag-shopping"></i> Add To Cart </button>
+        const modalContent = `  
+        <div class="swiper modal-images"> 
+            <div class="swiper-wrapper">
+                ${product.images.map(img => `<div class="swiper-slide"><img src="${img}" alt="${product.name}"></div>`).join('')}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="modal-details">
+        <h2>${product.name}</h2>
+        <h4>${product.finish} | ${product.category}</h4>
+        <h3>${product.price}</h3>
+        <p>${product.description}</p>
+        <div class="other-details">
+        <button><i class="fa-solid fa-bag-shopping"></i> Add To Cart </button>
+        </div>
+        </div>
     `;
         openModal(modalContent);
     });
@@ -475,7 +493,7 @@ $(document).ready(function () {
     generateProductCards(jewelleryCards);
 
 
-    /** -------------- USER INPUT JAVASCRIPT ----------- */
+    /** -------------- USER INPUT JAVASCRIPT ----------- */ /** EVENTUALLY PUT IN USER INPUT FOR RING SIZES */
 
     // Set up a variable to track the user:
     let user;

@@ -20,7 +20,7 @@ a {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden; /* This stop the modal from moving when users scroll as the modal is open */
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
 }
@@ -35,42 +35,100 @@ a {
     -webkit-box-shadow: 5px 5px 5px -1px rgba(0, 0, 0, 0.18);
     -moz-box-shadow: 5px 5px 5px -1px rgba(0, 0, 0, 0.18);
     margin: 15% auto;
-    padding: 20px;
     border: 1px solid #888;
     width: 50%;
     border-radius: 8px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
-    img {
-        width: 200px;
-        height: 300px;
+    .modal-body {
+        display: flex;
+        height: 400px;
+
+        /* Swiper CSS inside modal */
+        .swiper {
+            max-width: 50%;
+        }
+
+         /* styling of the dots as a whole */
+    .swiper-pagination {
+        width: 100px;
+        margin-left: 120px; /* Placing the pagination in the middle of swiper image */
+        background-color: #101110;
+        padding: 10px;
+        border-radius: 60px;
     }
 
-    button {
-        padding: 15px;
-        border-radius: 9px;
-        border: none;
+    /* size of the dots */
+    .swiper-pagination-bullet {
         background-color: white;
-        color: #101110;
-        font-size: 17px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-weight: bolder;
-        cursor: pointer;
-        transition: all 0.3s ease;
+        min-width: 18px;
+        min-height: 18px;
     }
 
-    button:hover {
-        color: #eeba2b;
-        transition: all 0.3s ease;
+       /* active bullet styling */
+       .swiper-pagination-bullet-active {
+        background-color: #eeba2b;
+        /* color for active bullet */
     }
+
+        .swiper-wrapper {
+            width: 100%;
+            max-height: 400px;
+
+            .swiper-slide {
+                max-width: 100%;
+                max-height: 100%;
+
+                img {
+                    border-top-left-radius: 8px;
+                    border-bottom-left-radius: 8px;
+                    min-width: 400px;
+                    max-height: 400px;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+
+
+        /* Product info CSS inside modal */
+        .modal-details {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+
+            .other-details {
+                display: flex;
+                button {
+                    border: none;
+                    background-color: white;
+                    color: #101110;
+                    font-size: 17px;
+                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    font-weight: bolder;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+            
+                button:hover {
+                    color: #eeba2b;
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+
+    }
+
 
 }
 
 .close {
+    padding: 10px;
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    z-index: 100;
 }
 
 .close:hover,
@@ -459,11 +517,6 @@ nav {
     }
 
 }
-
-/* Modal styling */
-
-
-/* end of modal */
 
 
 
