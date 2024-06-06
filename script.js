@@ -342,37 +342,17 @@ $(document).ready(function () {
         $('#productModal .modal-body').html(content);
         $('#productModal').fadeIn();
         $('body').addClass('no-scroll'); // Prevent background scrolling
-
-        // Initialize Swiper after modal content is loaded
-        setTimeout(function () {
-            mySwiper = new Swiper('.modal-images .swiper-container .swiper', {
-                direction: 'vertical',
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true
-                }
-            });
-        }, 500); // Adjust this timeout value as needed
     }
 
     function closeModal() {
         $('#productModal').fadeOut();
         $('body').removeClass('no-scroll'); // Allow background scrolling
-
-
-        // Destroy Swiper instance when modal is closed to prevent memory leaks
-        if (mySwiper) {
-            mySwiper.destroy();
-        }
     }
 
     $(document).on('click', '.product-image', function () {
         const productId = $(this).closest('.product-card').data('id');
         const product = jewelleryCards.find(item => item.id === productId);
-        const modalContent = `
-    <div class="modal-images">
-        
+        const modalContent = ` <div class="modal-images">  
     ${product.images.map(img => `<img src="${img}" alt="${product.name}">`).join('')} </div>
     <h2>${product.name}</h2>
     <h4>${product.finish} | ${product.category}</h4>
