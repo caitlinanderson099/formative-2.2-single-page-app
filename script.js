@@ -328,6 +328,7 @@ $(document).ready(function () {
         }
     ] // END OF DATA ARRAY
 
+
 /* -------------- Modal Functions -------------- */
 
 
@@ -524,6 +525,11 @@ $(document).ready(function () {
             console.log(user);
             // set the logged in user span to the user value:
             checkForLoggedInUser();
+
+            // This will clear the input fields when user clicks submit
+            $('#username').val('');
+            $('#email').val('');
+            $('#password').val('');
         }
     });
 
