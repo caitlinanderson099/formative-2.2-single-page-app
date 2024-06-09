@@ -104,7 +104,7 @@ $(document).ready(function () {
             category: 'Necklaces',
             finish: 'Gold',
             images: ['img/necklaces/link-gold.webp', 'img/necklaces/link-gold(2).webp', 'img/necklaces/link-gold(3).webp'],
-            description: 'Invest in quality jewellery staples from the Lovisa Waterproof Jewellery Collection!'
+            description: 'Invest in quality jewellery staples from the Jewellery Supreme Waterproof Collection!'
         },
         {
             id: 6,
@@ -113,7 +113,7 @@ $(document).ready(function () {
             category: 'Necklaces',
             finish: 'Gold',
             images: ['img/necklaces/heart-gold.webp', 'img/necklaces/heart-gold(2).webp', 'img/necklaces/heart-gold(3).webp'],
-            description: 'Invest in quality jewellery staples from the Lovisa Waterproof Jewellery Collection!'
+            description: 'Invest in quality jewellery staples from the Jewellery Supreme Waterproof Collection!'
         },
         // ROSE GOLD
         {
@@ -259,7 +259,7 @@ $(document).ready(function () {
             category: 'Earrings',
             finish: 'Sterling Silver',
             images: ['img/earrings/chain-sterling-silver.webp', 'img/earrings/chain-sterling-silver(2).webp', 'img/earrings/chain-sterling-silver(3).webp'],
-            description: 'Invest in quality jewellery staples from the Lovisa Sterling Silver Collection.'
+            description: 'Invest in quality jewellery staples from the Jewellery Supreme Sterling Silver Collection.'
         },
         {
             id: 21,
@@ -327,7 +327,6 @@ $(document).ready(function () {
             description: 'Experiment with Jewellery Supreme jewellery and accessories!'
         }
     ] // END OF DATA ARRAY
-
 
 /* -------------- Modal Functions -------------- */
 
@@ -451,18 +450,16 @@ $(document).ready(function () {
         </div>
     </div>
 
-    <div class="product-details">
-        <h3>${jewelleryCards.name}</h3>
-        <h5>${jewelleryCards.finish} | ${jewelleryCards.category}</h5>
-        <p>${jewelleryCards.description}</p>
+        <div class="product-details">
+                <h3>${jewelleryCards.name}</h3>
+                <h5>${jewelleryCards.finish} | ${jewelleryCards.category}</h5>
+                <p>${jewelleryCards.description}</p>
 
-        <div class="other-details">
-        <h4>${jewelleryCards.price}</h4>
-        <button>  <i class="fa-solid fa-bag-shopping"></i></button>
-    </div>
-    </div>
-
-    
+            <div class="other-details">
+            <h4>${jewelleryCards.price}</h4>
+            <button> <i class="fa-solid fa-bag-shopping"></i> </button>
+            </div>
+        </div>
     </div>
     `;
     }
@@ -490,7 +487,7 @@ $(document).ready(function () {
     generateProductCards(jewelleryCards);
 
 
-  /* -------------- User Input Functions -------------- */ /** Will eventually put user input functions for ring sizes */
+  /* -------------- User Input Functions -------------- */
 
     // Set up a variable to track the user:
     let user;
@@ -501,7 +498,7 @@ $(document).ready(function () {
         console.log('working');
 
         // Setup Regex for form validation:
-        const usernameRegex = /^[a-zA-Z0-9_]{5,15}$/;
+        const usernameRegex = /^[a-zA-Z0-9_]{3,10}$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
@@ -514,7 +511,7 @@ $(document).ready(function () {
 
         // Test against regex for form validation:
         if (!usernameRegex.test(username)) {
-            $('#formMessage').html(`<p>'Invalid username. Must be 5-15 characters long and contain only letters, numbers, and underscores.'</p>`);
+            $('#formMessage').html(`<p>'Invalid username. Must be 3-10 characters long and contain only letters, numbers, and underscores.'</p>`);
         } else if (!emailRegex.test(email)) {
             $('#formMessage').html(`<p>'Invalid email format.'</p>`);
         } else if (!passwordRegex.test(password)) {
@@ -527,8 +524,6 @@ $(document).ready(function () {
             console.log(user);
             // set the logged in user span to the user value:
             checkForLoggedInUser();
-            // Move to slide 2 of section 1:
-            fullpage_api.moveTo(1, 1); // go to slide #2
         }
     });
 
@@ -537,14 +532,13 @@ $(document).ready(function () {
             console.log("Log In");
         } else {
             console.log(user);
-            $('#userContainer').html(`<p> Hey, <span id="loggedInUser">${user}</span>! </p>`)
-            event.preventDefault(click); // stop the page from refreshing when clicking submit button
+            $('#userContainer').html(`<p> Welcome, <span id="loggedInUser">${user}</span>! </p> <img src="img/profile-pic.webp" alt="pfp" id="pfp">`)
+            $('#logInMessage').html(`Thank you, <span id="loggedInUser">${user}</span> for signing up!`);
+            event.preventDefault(); // stop the page from refreshing when clicking submit button
         }
     };
 
     checkForLoggedInUser(); // because no value is assigned to user it treats as false
-
-
 
 }); 
 /* -------------- End of jQuery Document -------------- */
