@@ -537,7 +537,7 @@ $(document).ready(function () {
             console.log("Log In");
         } else {
             console.log(user);
-            $('#userContainer').html(`<p> Hey, <span id="loggedInUser">${user}</span>! </p>`)
+            $('#userContainer').html(`<p> Welcome, <span id="loggedInUser">${user}</span>! </p>`)
             event.preventDefault(click); // stop the page from refreshing when clicking submit button
         }
     };

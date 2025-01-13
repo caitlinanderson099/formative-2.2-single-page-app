@@ -585,16 +585,24 @@ nav {
         margin: 0px;
     }
 
-    .fp-arrow {
-        margin-top: 70px;
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+        padding: 20px;
     }
 
     img {
         border-radius: 10px;
-        max-width: 300px;
-        max-height: 300px;
+        width: 350px;
+        height: 250px;
         object-fit: cover;
         cursor: pointer;
+        transition: all 0.5s ease;
+    }
+    img:hover {
+        scale: 1.1;
+        transition: all 0.5s ease;
     }
 
 }
