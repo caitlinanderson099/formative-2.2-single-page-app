@@ -9,6 +9,7 @@ body {
     scroll-behavior: smooth;
     text-decoration: none;
     text-decoration-color: #101110;
+    background-color: #101110;
 }
 
 /* -------------- 'A' Tag Css -------------- */
@@ -155,32 +156,28 @@ nav {
     top: 0;
     left: 0;
     padding: 10px 30px;
-    background-color: white;
     z-index: 100;
     min-width: 100%;
+    background: rgba(251, 251, 251, 0.06);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
 
     .nav-items {
         display: flex;
-        justify-content: center;
         align-items: center;
-        justify-content: space-around;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
         a {
             text-decoration: none;
             font-size: 1.5rem;
             font-weight: bold;
-            color: #101110;
-            transition: all 0.3s ease;
-        }
-
-        a:hover {
-            color: #eeba2b;
-            transition: all 0.3s ease;
+            color: #fbfbfb;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
 
         .logo {
-            background-image: url(/img/jewellery-logo.webp);
+            background-image: url('img/logo-no-bg.png');
             background-size: cover;
             background-position: center;
             min-width: 100px;
@@ -188,7 +185,7 @@ nav {
         }
 
         .fa-user {
-            color: black;
+            color: #fbfbfb;
             font-size: 2rem;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -216,33 +213,6 @@ nav {
     color: #101110;
 }
 
-/* -------------- Shopping Cart Icon -------------- */
-
-.fixed-cart {
-    position: fixed;
-    top: 90%;
-    left: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 2px solid #101110;
-    font-size: 1.4em;
-    background-color: white;
-    color: #101110;
-    padding: 10px;
-    z-index: 100;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.fixed-cart:hover {
-    border: 2px solid #eeba2b;
-    background-color: #101110;
-    color: #eeba2b;
-    transition: all 0.3s ease;
-}
-
 
 
 /* ---------- LAYOUT AND SIZE FOR ALL SECTIONS --------- */
@@ -257,94 +227,53 @@ nav {
 
 /* ------------ LANDING PAGE -------------- */
 
-/* This is to ensure items are in a row across the section */
-.row {
-    display: flex;
-    flex-direction: row;
-}
-
-/* This creates the two columns in the section */
-.col {
-    flex: 1;
-}
-
 #landingPage {
-    background-color: #101110;
-    font-family: "Great Vibes", cursive;
-    padding-bottom: 10px;
-}
-
-/* Left Half of Landing Page */
-.left-half {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 30px;
-    padding-top: 70px;
-
-    .title {
-        padding-top: 60px;
-        font-size: 2.3em;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    scroll-behavior: hidden;
+    overflow: hidden;
+    h1 {
+        font-family: "Great Vibes", sans-serif;
+    }
+    .navigation {
+        display: flex;
         justify-content: center;
-
-        /* This allows for the buttons to be close underneath the title text */
-        h4 {
-            margin: 0px;
-            padding: 0px;
+        gap: 3rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        a {
+            font-size: 24px;
+            position: relative;
+            display: inline-block;
         }
-    }
+        a::after,
+        a::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, #eeba2b, #eeba2b);
+        bottom: -5px;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.4s ease-out;
+        }
 
-    .buttons {
+        a::before {
+        top: -5px;
+        transform-origin: center;
+        }
 
-        button {
-            padding: 15px;
-            border-radius: 9px;
-            border: 2px solid #101110;
-            background-color: white;
-            color: #101110;
-            font-size: 17px;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-weight: bolder;
+        a:hover::after,
+        a:hover::before {
+            transform: scaleX(1);
+        }
+
+        a:hover {
             cursor: pointer;
-            transition: all 0.3s ease;
+
         }
-
-        button:hover {
-            background-color: #101110;
-            color: #eeba2b;
-            border: 2px solid #eeba2b;
-            transition: all 0.3s ease;
-        }
-    }
-
-
-}
-
-.right-half {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-around;
-
-    /* Image Sizing */
-    img {
-        max-width: 300px;
-        max-height: 300px;
-        border-radius: 40%;
-        border: 5px double #eeba2b;
-    }
-
-    /* Image  1 Positioning */
-    .landing-img1 {
-        position: absolute;
-        right: 25%;
-        top: 50%;
-    }
-
-    /* Image 2  Positioning */
-    .landing-img2 {
-        position: absolute;
-        right: 10%;
     }
 }
 
@@ -361,11 +290,42 @@ nav {
     #signUpForm {
         display: flex;
         justify-content: center;
-        width: 100%;
-        gap: 20px;
+        align-items: center;
+        flex: 1;
+        gap: 1rem;
 
-        button {
-            width: 100px;
+        a {
+            font-size: 24px;
+            position: relative;
+            display: inline-block;
+        }
+        a::after,
+        a::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, #eeba2b, #eeba2b);
+        bottom: -5px;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.4s ease-out;
+        }
+
+        a::before {
+        top: -5px;
+        transform-origin: center;
+        }
+
+        a:hover::after,
+        a:hover::before {
+            transform: scaleX(1);
+        }
+
+        a:hover {
+            cursor: pointer;
+
         }
     }
 
@@ -453,15 +413,17 @@ nav {
     /* styling of the dots as a whole */
     .swiper-pagination {
         background-color: #101110;
-        padding: 10px;
-        border-radius: 60px;
+        padding: 5px;
+        width: 90px;
+        margin: 0px 100px; /* to move it in the center */
+        border-radius: 40px;
     }
 
     /* size of the dots */
     .swiper-pagination-bullet {
         background-color: white;
-        min-width: 18px;
-        min-height: 18px;
+        min-width: 20px;
+        min-height: 20px;
     }
 
     /* swiper container */
@@ -480,7 +442,7 @@ nav {
         display: flex;
         flex-direction: column;
         max-width: 300px;
-        max-height: 650px;
+        max-height: 550px;
         color: #101110;
         font-size: 18px;
         background-color: white;
@@ -504,7 +466,6 @@ nav {
             /* button and price */
             .other-details {
                 display: flex;
-                justify-content: space-between;
 
                 button {
                     padding: 20px;

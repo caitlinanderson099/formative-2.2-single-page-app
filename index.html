@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.css" integrity="sha512-AIwt5sjXSKDo4t0KSQ/eAuy43kQMc1hYtIKLxaFrHd26nQFzMo1FJdBIickVyGXnhm2xB2OOYBqMBgu3dBU4KA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom CSS Link -->
     <link rel="stylesheet" href="/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Browser Tab Icon -->
     <link rel="shortcut icon" href="img/logo-no-bg.png" type="image/x-icon">
     <title> Jewellery Supreme Store </title>
@@ -22,10 +23,7 @@
     <nav id="navbar">
         <div class="nav-items">
             <div class="logo"></div>
-            <a href="#landingPage"> Home </a>
-            <a href="#shopAllSection"> Catalogue </a>
-            <a href="#gallerySection"> Gallery </a>
-
+            <a href="">Jewellery Supreme Online Store</a>
             <div id="userContainer">
                 <!-- user input using js -->
             </div>
@@ -45,24 +43,17 @@
 
         <!-- LANDING PAGE -->
         <div class="section" id="landingPage">
-            <div class="row">
-                <!-- Left Half of the Section -->
-                <div class="col left-half">
-                    <div class="title">
-                        <h4> Where Every Sparkle Tells a Story </h4>
-                    </div>
-                    <div class="buttons">
-                        <button id="shopNowBtn"> Shop Now </button>
-                        <button id="registerBtn"> Register With Us </button>
-                    </div>
-                </div>
-
-                <!-- Right Half of the Section -->
-                <div class="col right-half">
-                    <img src="/img/landing-image.webp" alt="" class="landing-img1">
-                    <img src="/img/landing-image(2).webp" alt="" class="landing-img2">
-                </div>
+            <div data-aos="fade-up"  data-aos-duration="1000">
+                <div>
+                    <h1>Where Every Sparkle Tells a Story</h1>
+                   </div>
+       
+                   <div class="navigation" data-aos="fade-up"  data-aos-duration="2000">
+                       <a id="shopNowBtn"> Shop Now </a>
+                       <a id="registerBtn"> Register With Us </a>
+                   </div>
             </div>
+            
         <!-- end of the section -->
         </div>
 
@@ -71,16 +62,12 @@
 
         <div class="section" id="signUpSection">
 
-            <!-- preview imgs? -->
-            <div id="allImages">
-            </div>
-
             <h3> Welcome! Please Log In/ Sign Up Here</h3>
             <form id="signUpForm">
                 <input type="text" id="username" placeholder="Username" required>
                 <input type="email" id="email" placeholder="Email" required>
                 <input type="password" id="password" placeholder="Password123" required>
-                <button id="submitButton">Sign Up</button>
+                <a id="submitButton">Sign Up</a>
             </form>
             <div id="formMessage"></div>
         </div>
@@ -177,6 +164,7 @@
     <script src="https://kit.fontawesome.com/5d99c8ae1e.js" crossorigin="anonymous"></script>
     <!-- Custom JS Link -->
     <script src="/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 
 </html>
