@@ -224,56 +224,96 @@ nav {
 
 /* ------------ LANDING PAGE -------------- */
 
-#landingPage {
-    padding: 30px;
-    width: 100%;
-    height: 100%;
-    scroll-behavior: hidden;
-    overflow: hidden;
-    h1 {
-        font-family: "Great Vibes", sans-serif;
-    }
-    .navigation {
-        display: flex;
-        justify-content: center;
-        gap: 3rem;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        a {
-            font-size: 24px;
-            position: relative;
-            display: inline-block;
-        }
-        a::after,
-        a::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(to right, #eeba2b, #eeba2b);
-        bottom: -5px;
-        left: 0;
-        transform: scaleX(0);
-        transform-origin: center;
-        transition: transform 0.4s ease-out;
-        }
-
-        a::before {
-        top: -5px;
-        transform-origin: center;
-        }
-
-        a:hover::after,
-        a:hover::before {
-            transform: scaleX(1);
-        }
-
-        a:hover {
-            cursor: pointer;
-
-        }
-    }
+/* This is to ensure items are in a row across the section */
+.row {
+    display: flex;
+    flex-direction: row;
 }
 
+/* This creates the two columns in the section */
+.col {
+    flex: 1;
+}
+
+#landingPage {
+    background-color: #101110;
+    font-family: "Great Vibes", cursive;
+    padding-bottom: 10px;
+}
+
+/* Left Half of Landing Page */
+.left-half {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    padding-top: 70px;
+
+    .title {
+        padding-top: 60px;
+        font-size: 2.3em;
+        justify-content: center;
+
+        /* This allows for the buttons to be close underneath the title text */
+        h4 {
+            margin: 0px;
+            padding: 0px;
+        }
+    }
+
+    .buttons {
+
+        button {
+            padding: 15px;
+            border-radius: 9px;
+            border: 2px solid #101110;
+            background-color: white;
+            color: #101110;
+            font-size: 17px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bolder;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #101110;
+            color: #eeba2b;
+            border: 2px solid #eeba2b;
+            transition: all 0.3s ease;
+        }
+    }
+
+
+}
+
+.right-half {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+    /* Image Sizing */
+    img {
+        max-width: 300px;
+        max-height: 300px;
+        border-radius: 40%;
+        border: 5px double #eeba2b;
+    }
+
+    /* Image  1 Positioning */
+    .landing-img1 {
+        position: absolute;
+        right: 25%;
+        top: 50%;
+    }
+
+    /* Image 2  Positioning */
+    .landing-img2 {
+        position: absolute;
+        right: 10%;
+    }
+}
 
 
 /* ------------- SIGN UP FORM PAGE ----------- */

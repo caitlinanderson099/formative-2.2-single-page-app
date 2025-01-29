@@ -41,22 +41,28 @@
 
 
 
-        <!-- LANDING PAGE -->
-        <div class="section" id="landingPage">
-            <div data-aos="fade-up"  data-aos-duration="1000">
-                <div>
-                    <h1>Where Every Sparkle Tells a Story</h1>
-                   </div>
-       
-                   <div class="navigation" data-aos="fade-up"  data-aos-duration="2000">
-                       <a id="shopNowBtn"> Shop Now </a>
-                       <a id="registerBtn"> Register With Us </a>
-                   </div>
+         <!-- LANDING PAGE -->
+         <div class="section" id="landingPage">
+            <div class="row">
+                <!-- Left Half of the Section -->
+                <div class="col left-half">
+                    <div class="title">
+                        <h4> Where Every Sparkle Tells a Story </h4>
+                    </div>
+                    <div class="buttons">
+                        <button id="shopNowBtn"> Shop Now </button>
+                        <button id="registerBtn"> Register With Us </button>
+                    </div>
+                </div>
+
+                <!-- Right Half of the Section -->
+                <div class="col right-half">
+                    <img src="/img/landing-image.webp" alt="" class="landing-img1">
+                    <img src="/img/landing-image(2).webp" alt="" class="landing-img2">
+                </div>
             </div>
-            
         <!-- end of the section -->
         </div>
-
 
         <!-- SIGN UP FORM SECTION -->
 
@@ -67,7 +73,7 @@
                 <input type="text" id="username" placeholder="Username" required>
                 <input type="email" id="email" placeholder="Email" required>
                 <input type="password" id="password" placeholder="Password123" required>
-                <a id="submitButton">Sign Up</a>
+                <button id="submitButton">Sign Up</button>
             </form>
             <div id="formMessage"></div>
         </div>
